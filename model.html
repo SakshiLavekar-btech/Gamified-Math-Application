@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathMind</title>
+  <link rel="stylesheet" href="mod.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="circle">
+  <div class="eye left"></div>
+  <div class="eye right"></div>
+  <div class="smile"></div>
+</div>
+
+
+    <div id="button">
+      <button id="b1">Home</button>
+      <button id="b2">Calculator</button>
+      <button id="b3">Games</button>
+      <button id="b4">Notes</button>
+      <button id="b5">Bot</button>
+    </div>
+
+    <div id="page">
+      <div id="page1">
+        <div>
+          <h1 id="welcome">WELCOME TO MATHWAVE</h1>
+          <div id="to">START</div>
+        </div>
+      </div>
+
+      <div id="page2">
+        
+        <h1 id="heading">🧮 Calculator</h1>
+        
+        <!-- <div id="mascot">🤖 I'm ready to help!</div>
+        <div id="scenario">
+          <select onchange="loadScenario(this.value)">
+            <option value="">Choose a scenario</option>
+            <option value="shopping">🛒 Shopping</option>
+            <option value="cooking">🍳 Cooking</option>
+          </select> -->
+        <div id="calculator">
+          <textarea name="Type here" id="w" readonly></textarea>
+          <div class="button" title="CLEAR">C</div>
+          <div class="button" title="ONE">1</div>
+          <div class="button" title="TWO">2</div>
+          <div class="button" title="THREE">3</div>
+          <div class="button" title="FOUR">4</div>
+          <div class="button" title="FIVE">5</div>
+          <div class="button" title="SIX">6</div>
+          <div class="button" title="SEVEN">7</div>
+          <div class="button" title="EIGHT">8</div>
+          <div class="button" title="NINE">9</div>
+          <div class="button" title="TEN">0</div>
+          <div class="button" title="PLUS">+</div>
+          <div class="button" title="MINUS">-</div>
+          <div class="button" title="MULTIPLY">*</div>
+          <div class="button" title="DIVIDE">/</div>
+          <div class="button" title="EQUAL TO">=</div>
+        </div>
+        <div id="balloon-area"></div>
+<div id="balloon-total"></div>
+      </div>
+
+      <div id="page3">
+        <div id="page3">
+          <div id="quiz-wrapper">
+            <h1 id="quiz-heading">🧠 MathMind Quiz</h1>
+            <div id="quiz-container">
+              <form id="quiz-form">
+                <div class="quiz-card">
+                  <p><strong>Q1)</strong> Riya has 5 apples. Her mom gives her 3 more. How many apples does Riya have
+                    now?</p>
+                  <label><input type="radio" name="q1" value="2"> 2</label>
+                  <label><input type="radio" name="q1" value="8"> 8</label>
+                  <label><input type="radio" name="q1" value="5"> 5</label>
+                  <label><input type="radio" name="q1" value="3"> 3</label>
+                </div>
+
+                <div class="quiz-card">
+                  <p><strong>Q2)</strong> Aarav has 10 toy cars. He gives 4 to his friend. How many toy cars does Aarav
+                    have left?</p>
+                  <label><input type="radio" name="q2" value="14"> 14</label>
+                  <label><input type="radio" name="q2" value="10"> 10</label>
+                  <label><input type="radio" name="q2" value="4"> 4</label>
+                  <label><input type="radio" name="q2" value="6"> 6</label>
+                </div>
+
+                <div class="quiz-card">
+                  <p><strong>Q3)</strong> There are 6 rows of chairs. Each row has 5 chairs. How many chairs are there
+                    in total?</p>
+                  <label><input type="radio" name="q3" value="16"> 16</label>
+                  <label><input type="radio" name="q3" value="5"> 5</label>
+                  <label><input type="radio" name="q3" value="30"> 30</label>
+                  <label><input type="radio" name="q3" value="6"> 6</label>
+                </div>
+
+                <div class="quiz-card">
+                  <p><strong>Q4)</strong> Meera had 12 balloons. 7 flew away. How many are left?</p>
+                  <label><input type="radio" name="q4" value="5"> 5</label>
+                  <label><input type="radio" name="q4" value="7"> 7</label>
+                  <label><input type="radio" name="q4" value="3"> 3</label>
+                  <label><input type="radio" name="q4" value="1"> 1</label>
+                </div>
+
+                <div class="quiz-card">
+                  <p><strong>Q5)</strong> There are 8 cookies. Rohan eats 3. How many are left?</p>
+                  <label><input type="radio" name="q5" value="9"> 9</label>
+                  <label><input type="radio" name="q5" value="7"> 7</label>
+                  <label><input type="radio" name="q5" value="5"> 5</label>
+                  <label><input type="radio" name="q5" value="1"> 1</label>
+                </div>
+
+                <button type="button" class="btn" onclick="submitQuiz()">✅ Submit Quiz</button>
+              </form>
+              <div id="quiz-score"></div>
+            </div>
+          </div>
+        </div>
+        <div id="quiz-arrows">
+          <span onclick="prevSlide()">⬅</span>
+          <span onclick="nextSlide()">➡</span>
+        </div>
+        <div id="multi">
+        <div id="quiz"><a href="C:\Users\s2516\New folder\model\genius\index.html">QUIZ</a></div>
+        <div id="wall"><a href="C:\Users\s2516\New folder\model\GAME\index.html">Wall GAME</a></div>
+        <div id="ballon"><a href="C:\Users\s2516\New folder\model\GAME\ballon\index.html">Ballon GAME</a></div>
+        <div id="shape"><a href="C:\Users\s2516\New folder\model\shape\index.html">Shapes</a></div>
+
+        </div>       
+</div>
+       
+
+      
+<div id="page4">
+  <h1 id="notes-heading">📓 MathMind Notes</h1>
+
+  <div id="notes-layout">
+    <div id="notes-sidebar">
+      <select id="topic-select">
+        <option value="">📚 Choose a topic</option>
+        <option value="addition">➕ Addition</option>
+        <option value="subtraction">➖ Subtraction</option>
+        <option value="multiplication">✖️ Multiplication</option>
+        <option value="division">➗ Division</option>
+        <option value="bodmas">📐 BODMAS</option>
+        <option value="numberline">📏 Number Line</option>
+        <option value="realnumbers">🔢 Real & Whole Numbers</option>
+        <option value="negativerules">➖ Negative Rules</option>
+        <option value="differentiation">📈 Differentiation</option>
+        <option value="integration">📉 Integration</option>
+      </select>
+      <button onclick="generateNote()">📝 View Note</button>
+    </div>
+
+    <div id="note-output">
+      📌 Select a topic and click "Add Note" to learn!
+    </div>
+  </div>
+</div>
+</div>
+      
+
+      <div id="page5">
+        <h1>🤖 Bot</h1>
+<div id="page5">
+  <h1>🤖 MathMind Bot Challenge</h1>
+  <div id="chatbot-panel">
+    <select id="bot-mode">
+  <option value="addition">➕ Addition</option>
+  <option value="subtraction">➖ Subtraction</option>
+  <option value="multiplication">✖️ Multiplication</option>
+  <option value="division">➗ Division</option>
+  <option value="puzzle">🧩 Puzzle</option>
+</select>
+    <button onclick="startBot()">▶️ Start Game</button>
+    <button onclick="stopBot()">⏹️ Stop</button>
+    <div id="bot-output">Click "Start Game" to begin!</div>
+    <div id="mascot-reaction">🙂</div>
+    <div id="bot-input-area">
+  <input type="text" id="bot-answer" placeholder="Type your answer here" />
+  <button onclick="submitBotAnswer()">Submit</button>
+</div>
+  </div>
+  </div>
+  </div>
+
+  <script src="modelstyle.js"></script>
+</body>
+
+</html>

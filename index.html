@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Math Bot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>🤖 Math Bot</h1>
+      <p class="subtitle">Ask me any math expression: e.g. <code>12*5</code>, <code>(10+5)/2</code></p>
+    </header>
+
+    <section class="chat" id="chat">
+      <div class="chat__welcome">
+        <div class="bot-bubble">Hi! I’m your Math Bot. Type an expression like <b>2+3*4</b>.</div>
+      </div>
+    </section>
+
+    <form id="inputForm" class="composer" autocomplete="off">
+      <input id="messageInput" class="composer__input" type="text" placeholder="Type math expression..." />
+      <button class="composer__send" type="submit">Solve</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
